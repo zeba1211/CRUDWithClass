@@ -1,5 +1,107 @@
-<li>{{ object.first_name }}</li>
+<!-- <li>{{ object.first_name }}</li>
     <li>{{ object.last_name }}</li>
     <li>{{ object.gender }}</li>
     <li>{{ object.hire_date }}</li>
+    <a href="/list">Back to list</a> -->
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        /* General body and page styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc; /* Light background color for the page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        /* Container for the details section */
+        .details-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
+            max-width: 500px;
+            width: 100%;
+            text-align: center; /* Centered text inside the container */
+        }
+
+        h2 {
+            color: #333; /* Dark color for the heading */
+            margin-bottom: 20px;
+            font-size: 24px; /* Slightly larger heading */
+        }
+
+        ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 18px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd; /* Add a line between list items */
+            color: #555;
+        }
+
+        li:last-child {
+            border-bottom: none; /* Remove border from last item */
+        }
+
+        /* Link styling */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3; /* Darker blue when hovered */
+        }
+
+        /* Add a responsive design for small screens */
+        @media (max-width: 600px) {
+            .details-container {
+                padding: 20px;
+                width: 90%; /* Make container width 90% on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Details Container -->
+<div class="details-container">
+    <h2>Employee Details</h2>
+    
+    <!-- List of employee details -->
+    <ul>
+        <li><strong>First Name:</strong> {{ object.first_name }}</li>
+        <li><strong>Last Name:</strong> {{ object.last_name }}</li>
+        <li><strong>Gender:</strong> {{ object.gender }}</li>
+        <li><strong>Hire Date:</strong> {{ object.hire_date }}</li>
+    </ul>
+
+    <!-- Back to list link -->
     <a href="/list">Back to list</a>
+</div>
+
+</body>
+</html>

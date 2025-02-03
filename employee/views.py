@@ -14,7 +14,7 @@ from employee.models import Employee
 class EmployeeCreate(CreateView):
     model=Employee
     template_name='employee_form.html'
-    fields="__all__"
+    fields = "__all__"    
     success_url="/list"
 
 class EmployeeListView(ListView):

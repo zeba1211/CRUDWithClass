@@ -1,4 +1,4 @@
-<ul>
+<!-- <ul>
     {% for object in object_list%}
 
     <li><a href="/details/{{object.emp_no}}">{{ object.birth_date }}  {{ object.first_name }}</a>   <a href="/update/{{object.emp_no}}">Edit</a>    <a href="/delete/{{object.emp_no}}">Delete</a></li>
@@ -7,4 +7,115 @@
     {% empty %}
     <li>No objects yet.</li>
     {% endfor %}
-</ul>    
+</ul>     -->
+<!-- <table border="1">
+    <thead>
+        <tr>
+            <th>Emp No</th>
+            <th>Birth Date</th>
+            <th>First Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td><a href="/details/{{ object.emp_no }}">{{ object.emp_no }}</a></td>
+                <td>{{ object.birth_date }}</td>
+                <td>{{ object.first_name }}</td>
+                <td>
+                    <a href="/update/{{ object.emp_no }}">Edit</a> |
+                    <a href="/delete/{{ object.emp_no }}">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">No objects yet.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+        /* Ensure the table takes up the full width of the screen */
+        table {
+            width: 50%;  /* Table takes up 100% of the available width */
+            border-collapse: collapse;  /* Collapse borders between cells */
+            margin: 20px 0;  /* Adds space around the table */
+        }
+
+        /* Styling the table headers */
+        th, td {
+            padding: 15px;        /* Adds space inside each cell */
+            text-align: left;     /* Aligns text to the left */
+            border: 1px solid #ddd; /* Adds border between cells */
+        }
+
+        /* Styling for the table header (column titles) */
+        th {
+            background-color: #f4f4f4;  /* Light grey background */
+        }
+
+        /* Alternate row background color */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Ensure that links inside the table have a consistent look */
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* For responsive design (when the screen size is smaller) */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 10px;  /* Reduce padding on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Emp No</th>
+            <th>Birth Date</th>
+            <th>First Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td><a href="/details/{{ object.emp_no }}">{{ object.emp_no }}</a></td>
+                <td>{{ object.birth_date }}</td>
+                <td>{{ object.first_name }}</td>
+                <td>
+                    <a href="/update/{{ object.emp_no }}">Edit</a> |
+                    <a href="/delete/{{ object.emp_no }}">Delete</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">No objects yet.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
+

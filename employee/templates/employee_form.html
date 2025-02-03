@@ -1,4 +1,4 @@
-<form method="POST" enctype="multipart/form-data">
+<!-- <form method="POST" enctype="multipart/form-data">
 
     {% csrf_token %}
 
@@ -6,4 +6,122 @@
 
     <input type="submit" value="submit">
 </form>    
-<a href="/list">Back to list</a>
+<a href="/list">Back to list</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+    <style>
+        /* General styling for the form */
+        body {
+            font-family: 'Arial', sans-serif; /* Modern font */
+            background-color: #f4f7fc; /* Light background for the page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        .form-container {
+            background-color: white; /* White background for the form */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
+            max-width: 500px; /* Max width for the form */
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center; /* Centered header */
+            color: #333; /* Dark text color for the header */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        /* Styling the input fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
+            width: 100%; /* Full width of the form container */
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #fafafa; /* Light grey background for inputs */
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="file"]:focus,
+        textarea:focus {
+            border-color: #5cb85c; /* Green border when focused */
+            outline: none; /* Removes default focus outline */
+            background-color: #fff; /* White background on focus */
+        }
+
+        input[type="submit"] {
+            width: 100%; /* Full width */
+            padding: 12px;
+            background-color: #007BFF; /* Blue background */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            text-align: center;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Adding responsive design */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+                width: 90%; /* Reduce the form width on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Submit Your Information</h2>
+
+    <!-- Form with POST method and enctype for file upload -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Render form fields -->
+        {{ form.as_p }} 
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Link to go back to the list page -->
+    <a href="/list">Back to list</a>
+</div>
+
+</body>
+</html>

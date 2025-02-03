@@ -1,4 +1,103 @@
-<form method="POST">{% csrf_token %}
+<!-- <form method="POST">{% csrf_token %}
     <p>ARE YOU SURE YOU WANT TO DELETE "{{ object }}"?</p>
     <input type="submit" value="confirm">
-</form>    
+</form>     -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirmation</title>
+    <style>
+        /* General styling for the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc; /* Light background for the page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+        }
+
+        /* Container for the confirmation box */
+        .confirmation-box {
+            background-color: white; /* White background for the box */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            width: 100%;
+            max-width: 500px; /* Limit width */
+            text-align: center; /* Center the text */
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px; /* Slightly larger heading */
+        }
+
+        p {
+            font-size: 18px;
+            color: #555; /* Slightly darker color for text */
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 12px 30px;
+            background-color: #ff4136; /* Red color for delete button */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007BFF; /* Blue color for the back link */
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Responsive design for small screens */
+        @media (max-width: 600px) {
+            .confirmation-box {
+                width: 90%; /* Make box take up more width on smaller screens */
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="confirmation-box">
+    <h2>Delete Confirmation</h2>
+
+    <!-- Display the confirmation message -->
+    <p>ARE YOU SURE YOU WANT TO DELETE "{{ object }}"?</p>
+
+    <!-- The form to confirm deletion -->
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+    </form>
+
+    <!-- Link to go back without deletion -->
+    <a href="/list">Cancel</a>
+</div>
+
+</body>
+</html>
